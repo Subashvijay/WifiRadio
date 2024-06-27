@@ -2,24 +2,12 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build-console",
+            "label": "build",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Server/Console/WifiRadioServer/WifiRadioServer.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary;ForceNoAlign"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "build-SignalR",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/Server/SignalR/WifiRadioSignalR/WifiRadioSignalR.csproj",
+                "${workspaceFolder}/WifiRadioSignalR.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -31,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/Server/Console/WifiRadioServer/WifiRadioServer.csproj",
+                "${workspaceFolder}/WifiRadioSignalR.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -45,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/Server/Console/WifiRadioServer/WifiRadioServer.csproj"
+                "${workspaceFolder}/WifiRadioSignalR.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

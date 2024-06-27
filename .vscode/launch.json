@@ -2,19 +2,56 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "SignalR (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-SignalR",
+            "program": "${workspaceFolder}/Server/SignalR/WifiRadioSignalR/bin/Debug/net8.0/WifiRadioSignalR.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        
+        {
             // Use IntelliSense to find out which attributes exist for C# debugging
             // Use hover for the description of the existing attributes
             // For further information visit https://github.com/dotnet/vscode-csharp/blob/main/debugger-launchjson.md
             "name": "Wifi Radio (console)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "build-console",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/Server/Console/WifiRadioServer/bin/Debug/net8.0/WifiRadioServer.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Server/Console/WifiRadioServer",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
-            "console": "internalConsole",
+            "console": "externalTerminal",
+            "stopAtEntry": false
+        },
+        {
+            // Use IntelliSense to find out which attributes exist for C# debugging
+            // Use hover for the description of the existing attributes
+            // For further information visit https://github.com/dotnet/vscode-csharp/blob/main/debugger-launchjson.md
+            "name": "Wifi Radio (SignalR)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-SignalR",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/Server/SignalR/WifiRadioSignalR/obj/Debug/net8.0/apphost.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         {
